@@ -1,11 +1,9 @@
-
-// 1. CONFIGURAÇÕES INICIAIS
 let tamanhoFonte = Number(localStorage.getItem("tamanhoFonte")) || 16;
 
 const tamanhoMinimo = 12;
 const tamanhoMaximo = 24;
 
-// 2. SELECIONANDO OS CONTROLES
+// controles de acessibilidade
 const aumentarFonte = document.getElementById("aumentar-fonte");
 const diminuirFonte = document.getElementById("diminuir-fonte");
 const altoContraste = document.getElementById("alto-contraste");
@@ -13,7 +11,7 @@ const reduzirAnimacoes = document.getElementById("reduzir-animacoes");
 const restaurar = document.getElementById("restaurar");
 
 
-// 3. RECUPERANDO AS PREFERÊNCIAS SALVAS
+// preferências do usuário
 const contrasteSalvo = localStorage.getItem("altoContraste") === "true";
 
 document.documentElement.style.fontSize = tamanhoFonte + "px";
@@ -26,11 +24,11 @@ if (contrasteSalvo) {
 const animacoesSalvas = localStorage.getItem("reduzirAnimacoes") === "true";
 
 if (animacoesSalvas) {
-    document.body.classList.add("reduzir-animacoes");
+    document.body.classList.add("reduzir-animacoes"); 
     reduzirAnimacoes.setAttribute("aria-pressed", "true");
 }
 
-// 4. AUMENTAR A FONTE
+// aumentar a fonte
 aumentarFonte.addEventListener("click", function() {
     if (tamanhoFonte < tamanhoMaximo) {
         tamanhoFonte += 2;
@@ -41,7 +39,7 @@ aumentarFonte.addEventListener("click", function() {
     }
 });
 
-// 5. DIMINUIR A FONTE
+// diminuir fonte
 diminuirFonte.addEventListener("click", function() {
     if (tamanhoFonte > tamanhoMinimo) {
         tamanhoFonte -= 2;
@@ -52,7 +50,7 @@ diminuirFonte.addEventListener("click", function() {
     }
 });
 
-// 6. ALTO CONTRASTE
+// alto contraste
 altoContraste.addEventListener("click", function() {
     document.body.classList.toggle("alto-contraste");
 
@@ -63,7 +61,7 @@ altoContraste.addEventListener("click", function() {
     localStorage.setItem("altoContraste", ativado);
 });
 
-// 7. REDUZIR ANIMAÇÕES
+// reduzir animações 
 reduzirAnimacoes.addEventListener("click", function() {
     document.body.classList.toggle("reduzir-animacoes");
 
@@ -74,7 +72,7 @@ reduzirAnimacoes.addEventListener("click", function() {
     localStorage.setItem("reduzirAnimacoes", ativado);
 });
 
-// 8. RESTAURAR CONFIGURAÇÕES
+// restaurar configurações
 restaurar.addEventListener("click", function() {
     tamanhoFonte = 16;
 
