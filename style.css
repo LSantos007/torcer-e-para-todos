@@ -1,24 +1,17 @@
 
-/* =================================
-   1. CONFIGURAÇÕES GERAIS
-================================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;    background-color: #F4F7F9;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;    background-color: #F4F7F9; /* fonte desenvolvida visandk maximizar a legibilidade e o reconhecimento de caracteres para leitores com baixa visão
     color: #263238;
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* =================================
-   2. CABEÇALHO
-================================= */
+/* cabeçalho */
 
 header {
     background-color: #183B56;
@@ -36,9 +29,7 @@ header p {
     margin-bottom: 20px;
 }
 
-/* =================================
-   3. MENU DE NAVEGAÇÃO
-================================= */
+/* menu  */
 
 nav ul {
     list-style: none;
@@ -62,27 +53,34 @@ nav a:hover {
     color: #183B56;
 }
 
-/* =================================
-   4. LINK PARA PULAR AO CONTEÚDO
-================================= */
+/* link do pular para conteúdo*/
 
 body > a:first-of-type {
     position: absolute;
-    top: -100px;
+    top: 10px;
     left: 12px;
-    background-color: #FFFFFF;
-    color: #183B56;
-    padding: 12px;
-    z-index: 10;
+    background-color: #183B56;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 999;
+    opacity: 0.55;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+body > a:first-of-type:hover {
+    opacity: 1;
 }
 
 body > a:first-of-type:focus {
-    top: 12px;
+    opacity: 1;
+    outline: 3px solid #287A68;
+    outline-offset: 3px;
 }
 
-/* =================================
-   5. CONTEÚDO PRINCIPAL
-================================= */
+/* conteúdo */
 
 main {
     width: 90%;
@@ -110,9 +108,7 @@ p {
     margin-bottom: 16px;
 }
 
-/* =================================
-   6. ARTIGOS
-================================= */
+/* conteúdos separados */
 
 article {
     background-color: #FFFFFF;
@@ -122,9 +118,7 @@ article {
     border: 1px solid #D5DEE5;
 }
 
-/* =================================
-   7. IMAGENS E LEGENDAS
-================================= */
+/* imagens e legendas */
 
 figure {
     margin: 20px 0;
@@ -143,9 +137,7 @@ figcaption {
     color: #455A64;
 }
 
-/* =================================
-   8. LINKS E FOCO DO TECLADO
-================================= */
+/* links */
 
 a {
     color: #17634F;
@@ -156,10 +148,8 @@ a:hover {
 }
 
 
-/* ACESSIBILIDADE POR TECLADO */
+/* teclado acessível */
 
-
-/* DESTAQUE DE FOCO PARA NAVEGAÇÃO POR TECLADO */
 
 a:focus-visible,
 button:focus-visible,
@@ -171,7 +161,7 @@ textarea:focus-visible {
     border-radius: 4px;
 }
 
-/* Destaque especial para os controles de acessibilidade */
+/* Destaque  para os controles de acessibilidade */
 .controles-acessibilidade button:focus-visible {
     outline: 4px solid #FFFFFF;
     outline-offset: 3px;
@@ -179,9 +169,7 @@ textarea:focus-visible {
 }
 
 
-/* =================================
-   9. RODAPÉ
-================================= */
+/* footer */
 
 footer {
     background-color: #183B56;
@@ -194,9 +182,7 @@ footer p {
     margin-bottom: 0;
 }
 
-/* =================================
-   10. ADAPTAÇÃO PARA CELULARES
-================================= */
+/* responsividade pro celular */
 
 @media (max-width: 600px) {
 
@@ -242,9 +228,6 @@ h3 {
     font-size: 1.4rem;
 }
 
-/* =================================
-   11. IDENTIDADE VISUAL DOS CARTÕES
-================================= */
 
 article {
     box-shadow: 0 3px 12px rgba(24, 59, 86, 0.07);
@@ -256,18 +239,13 @@ article:hover {
     box-shadow: 0 6px 18px rgba(24, 59, 86, 0.12);
 }
 
-/* =================================
-   12. LINKS MAIS VISÍVEIS
-================================= */
 
 a {
     font-weight: 600;
     text-underline-offset: 4px;
 }
 
-/* =================================
-   13. MELHOR ORGANIZAÇÃO DO TEXTO
-================================= */
+/* organização do texto */
 
 main > section:first-child {
     padding: 24px 0;
@@ -277,9 +255,7 @@ section > article p:last-child {
     margin-bottom: 0;
 }
 
-/* =================================
-   14. RESPEITO ÀS PREFERÊNCIAS
-================================= */
+/* preferências do usuário */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -291,7 +267,7 @@ section > article p:last-child {
     }
 }
 
-/* CONTROLES DE ACESSIBILIDADE */
+/* controles d acessibilidade */
 
 .controles-acessibilidade {
     display: flex;
@@ -321,9 +297,7 @@ section > article p:last-child {
     outline-offset: 4px;
 }
 
-/* =================================
-   MODO DE ALTO CONTRASTE
-================================= */
+/* modo alto contraste */
 
 body.alto-contraste {
     background-color: #000000;
@@ -372,7 +346,7 @@ body.alto-contraste figcaption {
     color: #FFFFFF;
 }
 
-/* REDUÇÃO DE ANIMAÇÕES */
+/* redução de animação */
 
 body.reduzir-animacoes *,
 body.reduzir-animacoes *::before,
@@ -383,9 +357,7 @@ body.reduzir-animacoes *::after {
 }
 
 
-/* =================================
-   15. DICAS DE NAVEGAÇÃO
-================================= */
+/* orientação pra navegação */
 
 .dicas-teclado {
     position: fixed;
@@ -432,11 +404,28 @@ body.reduzir-animacoes *::after {
     border-radius: 3px;
 }
 
-/* Em telas pequenas, a caixa não fica sobre o conteúdo */
+/* responsididade da caixa de orientação */
 @media (max-width: 600px) {
     .dicas-teclado {
         position: static;
         width: 90%;
         margin: 20px auto;
     }
+}
+
+/* efeito na imagem */
+figure img {
+    transition: transform 0.3s ease;
+}
+
+figure img:hover {
+    transform: scale(1.03);
+}
+
+.reduzir-animacoes figure img {
+    transition: none;
+}
+
+.reduzir-animacoes figure img:hover {
+    transform: none;
 }
