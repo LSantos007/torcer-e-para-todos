@@ -7,7 +7,7 @@
 body {
     font-family: 'Atkinson Hyperlegible', Arial, sans-serif;    background-color: #F4F7F9; /* fonte desenvolvida visandk maximizar a legibilidade e o reconhecimento de caracteres para leitores com baixa visão */
     color: #263238;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
